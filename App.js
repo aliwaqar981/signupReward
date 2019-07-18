@@ -17,15 +17,20 @@ import {
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
 
-import { createStackNavigator,createAppContainer } from 'react-navigation';
+import { createStackNavigator,createAppContainer,createSwitchNavigator } from 'react-navigation';
 import Signup from './src/screens/auth/signup'
 import Signin from './src/screens/auth/signin'
 import RewardStatus from './src/screens/rewardStatus'
+import Dashboard from './src/screens/dashboard'
 
-const MainNavigator  = createStackNavigator({
-  SignupScreen: { screen: Signup },
-  SigninScreen: { screen: Signin },
-  RewardScreen: {screen:RewardStatus},
+const MainNavigator  = createSwitchNavigator({
+  SignupScreen: Signup ,
+  SigninScreen: Signin ,
+  RewardScreen: RewardStatus,
+  DashboardScreen: Dashboard,
+},
+{
+  initialRouteName: 'SigninScreen',
 });
 
 const App = createAppContainer(MainNavigator);

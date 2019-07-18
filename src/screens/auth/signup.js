@@ -60,12 +60,12 @@ class Signup extends Component{
                 </View>
 
                 <TouchableOpacity 
-                onPress={()=>this.login()}
+                onPress={()=>this.props.navigation.navigate('DashboardScreen')}
                 style={[Platform.OS == 'ios' ? styles.buttonRedIos : styles.buttonRedAndroid]}>
                     <Text style={{color:'#ffffff',fontSize:15}}>REGISTER</Text>
                 </TouchableOpacity>
 
-                <TouchableOpacity style={{marginTop:hp(2)}} onPress={()=>this.props.navigation.navigate('SigninScreen')}>
+                <TouchableOpacity style={{marginTop:hp(2)}} onPress={()=>this.props.navigation.navigate('DashboardScreen')}>
                     <Text style={{fontSize:15,color:'#ffffff'}}>Login</Text>
                 </TouchableOpacity>
             </View>
