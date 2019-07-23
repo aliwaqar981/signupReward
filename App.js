@@ -20,20 +20,31 @@ import {
 import { createStackNavigator,createAppContainer,createSwitchNavigator } from 'react-navigation';
 import Signup from './src/screens/auth/signup'
 import Signin from './src/screens/auth/signin'
-import RewardStatus from './src/screens/rewardStatus'
+import RewardStatus from './src/screens/appView/rewardStatus'
 import Dashboard from './src/screens/dashboard'
+import MainMenu from './src/screens/appView/mainmenu'
 
-const MainNavigator  = createSwitchNavigator({
-  SignupScreen: Signup ,
-  SigninScreen: Signin ,
-  RewardScreen: RewardStatus,
-  DashboardScreen: Dashboard,
-},
-{
-  initialRouteName: 'SigninScreen',
-});
+import AppNavigation from './navigation/AppNavigation'
+// const MainNavigator  = createSwitchNavigator({
+//   SignupScreen: Signup ,
+//   SigninScreen: Signin ,
+//   RewardScreen: RewardStatus,
+//   DashboardScreen: Dashboard,
+//   MenuScreen:MainMenu,
+// },
+// {
+//   initialRouteName: 'SigninScreen',
+// });
 
-const App = createAppContainer(MainNavigator);
+// const App = createAppContainer(MainNavigator);
 
-export default App;
+// export default App;
 
+type Props = {};
+export default class App extends Component<Props> {
+  render() {
+    return (
+      <AppNavigation />
+    );
+  }
+}

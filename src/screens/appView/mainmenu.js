@@ -1,19 +1,19 @@
 import React, {Component} from 'react'
 import {View, Text, TouchableOpacity, TextInput, StyleSheet, Image, Platform, FlatList} from 'react-native'
-import {widthPercentageToDP as wp, heightPercentageToDP as hp} from '../helpers/Responsive'
+import {widthPercentageToDP as wp, heightPercentageToDP as hp} from '../../helpers/Responsive'
 import Drawer from 'react-native-drawer'
-import ControlPanel from './controlPanel'
-import DashBody from './dashBody'
+import MenuPanel from './menuPanel'
+import RewardStatus from './rewardStatus';
 
 
-class Dashboard extends Component{
+class MainMenu extends Component{
 
     constructor(props) {
         super(props);
         this.state = {
           //? states for drawer
           drawerType: "overlay",
-          openDrawerOffset: 0.6,
+          openDrawerOffset: 0.8,
           closedDrawerOffset: 0,
     
           relativeDrag: false,
@@ -49,7 +49,7 @@ class Dashboard extends Component{
     render(){
 
         var controlPanel = (
-            <ControlPanel
+            <MenuPanel
               lati={this.state.latitudeX}
               longi={this.state.longitudeX}
               closeDrawer={() => {
@@ -90,16 +90,14 @@ class Dashboard extends Component{
             useInteractionManager="true"
         >
         <View style={{flex:1,backgroundColor:'#f4f5f7'}}>
-            <View style={{width:wp(100),height:wp(20),backgroundColor:'#172b4d',alignItems:'center',flexDirection:'row',justifyContent:'center'}}>
-                    <TouchableOpacity style={{marginLeft:wp(5),position:'absolute',left:0}} onPress={()=>{this._drawer.open()}}>
-                        <Image source={require('../assets/menu.png')} style={{width:wp(5),height:wp(5),marginRight:wp(5)}} resizeMode='contain'/>
+            <View style={{width:wp(100),height:wp(20),backgroundColor:'#ffffff',alignItems:'center',flexDirection:'row',}}>
+                    <TouchableOpacity style={{marginLeft:wp(5)}} onPress={()=>{this._drawer.open()}}>
+                        <Image source={require('../../assets/menuBlue.png')} style={{width:wp(12),height:wp(12),marginRight:wp(5)}} resizeMode='contain'/>
                     </TouchableOpacity>
-                    <Text style={styles.headerText}>Specs</Text>
-                
             </View>
 
             <View style={{flex:1,backgroundColor:'#ffffff',margin:wp(5)}}>
-                <DashBody/>
+                <RewardStatus/>
             </View>
         </View>
       </Drawer>
@@ -122,4 +120,4 @@ const styles=StyleSheet.create({
     }
 })
 
-export default Dashboard;
+export default MainMenu;

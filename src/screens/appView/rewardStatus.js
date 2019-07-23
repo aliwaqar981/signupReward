@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 import {View, Text, TouchableOpacity, TextInput, StyleSheet, Image, Platform, FlatList} from 'react-native'
-import {widthPercentageToDP as wp, heightPercentageToDP as hp} from '../helpers/Responsive'
+import {widthPercentageToDP as wp, heightPercentageToDP as hp} from '../../helpers/Responsive'
 
 
 const data=[
@@ -9,7 +9,7 @@ const data=[
         name:'Food'
     },
     {
-        key:3,
+        key:2,
         name:'Food'
     },
     {
@@ -18,11 +18,20 @@ const data=[
     }
 ]
 
+export const Heading=(props)=>{
+    return(
+        <View style={{width:wp(90)}}>
+            <Text style={{color:'#253858',fontSize:20,fontWeight:'bold',marginLeft:wp(4),marginTop:hp(2)}}>Password Reset</Text>
+            <View style={{marginTop:hp(2),height:wp(0.2),width:wp(90),backgroundColor:'#ebecf0'}}/>
+        </View>
+    )
+} 
+
 class RewardStatus extends Component{
 
     renderList = ({item}) => (
         <View style={styles.rewardCardContainer}>
-            <Image source={require('../assets/f1.jpg')} style={{width:wp(22), height:wp(28)}} resizeMode={'cover'}/>
+            <Image source={require('../../assets/f1.jpg')} style={{width:wp(22), height:wp(28)}} resizeMode={'cover'}/>
             <View style={{overflow:'hidden'}}>
                 <Text style={styles.headingText}>Food</Text>
                 <Text style={[styles.bodyText,{width:wp(35)}]}>Lorem ipsum dolor sit Ametpri te sumo dolor Sit Ametpri te sumo</Text>
@@ -40,9 +49,14 @@ class RewardStatus extends Component{
     render(){
         return(
             <View style={styles.container}>
+                
+                <View style={{position:'absolute',top:0}}>
+                    <Heading/>
+                </View>
+
                 <FlatList
-                data={data}
-                renderItem={this.renderList}/>
+                    data={data}
+                    renderItem={this.renderList}/>
             </View>
         );
     }
