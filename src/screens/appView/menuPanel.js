@@ -4,6 +4,10 @@ import {widthPercentageToDP as wp, heightPercentageToDP as hp} from '../../helpe
 import Drawer from 'react-native-drawer'
 import {withNavigation} from 'react-navigation'
 
+
+//********* This is the Drawer Custom Component for app view 
+//********* it is being used in mainMenu screen for drawer  
+
 class MenuPanel extends Component{
     render(){
         return(
@@ -12,22 +16,22 @@ class MenuPanel extends Component{
                     <Text style={{fontSize:20}}>tag</Text>
                 </View>
 
-                <TouchableOpacity onPress={()=>this.props.navigation.navigate('SocialScreen')} style={[styles.DrawerOption,{marginTop:hp(10)}]}>
-                    <Image source={require('../../assets/dashboard.png')} style={{width:wp(7),height:wp(7)}} resizeMode='contain'/>
-                </TouchableOpacity>
-                <View style={styles.horizontalDash}/>
-
-                <TouchableOpacity style={styles.DrawerOption}>
-                    <Image source={require('../../assets/flame.png')} style={{width:wp(7),height:wp(7)}} resizeMode='contain'/>
-                </TouchableOpacity>
-                <View style={styles.horizontalDash}/>
-
-                <TouchableOpacity style={styles.DrawerOption} onPress={()=>this.props.navigation.navigate('MenuScreen')}>
+                <TouchableOpacity style={[styles.DrawerOption,{marginTop:hp(10)}]} onPress={()=>this.props.navigation.navigate('Screen1')}>
                     <Image source={require('../../assets/reward.png')} style={{width:wp(7),height:wp(7)}} resizeMode='contain'/>
                 </TouchableOpacity>
                 <View style={styles.horizontalDash}/>
 
-                <TouchableOpacity onPress={()=>this.props.navigation.navigate('PasswordResetScreen')} style={{width:wp(10),height:wp(10),borderRadius:wp(5),marginTop:hp(7),backgroundColor:'#9aad12'}}>
+                <TouchableOpacity onPress={()=>this.props.navigation.navigate('Screen3')} style={styles.DrawerOption}>
+                    <Image source={require('../../assets/dashboard.png')} style={{width:wp(7),height:wp(7)}} resizeMode='contain'/>
+                </TouchableOpacity>
+                <View style={styles.horizontalDash}/>
+
+                <TouchableOpacity style={styles.DrawerOption} onPress={()=>this.props.navigation.navigate('Screen4')}>
+                    <Image source={require('../../assets/flame.png')} style={{width:wp(7),height:wp(7)}} resizeMode='contain'/>
+                </TouchableOpacity>
+                <View style={styles.horizontalDash}/>
+
+                <TouchableOpacity onPress={()=>this.props.navigation.navigate('Screen2')} style={{width:wp(10),height:wp(10),borderRadius:wp(5),marginTop:hp(7),backgroundColor:'#9aad12'}}>
                 </TouchableOpacity>
 
             

@@ -21,7 +21,7 @@ const data=[
 export const Heading=(props)=>{
     return(
         <View style={{width:wp(90)}}>
-            <Text style={{color:'#253858',fontSize:20,fontWeight:'bold',marginLeft:wp(4),marginTop:hp(2)}}>Password Reset</Text>
+            <Text style={{color:'#253858',fontSize:20,fontWeight:'bold',marginLeft:wp(4),marginTop:hp(2)}}>{props.headingText}</Text>
             <View style={{marginTop:hp(2),height:wp(0.2),width:wp(90),backgroundColor:'#ebecf0'}}/>
         </View>
     )
@@ -48,15 +48,14 @@ class RewardStatus extends Component{
 
     render(){
         return(
+            <View style={{flex:1,backgroundColor:'#f4f5f7',padding:wp(5)}}>
             <View style={styles.container}>
-                
-                <View style={{position:'absolute',top:0}}>
-                    <Heading/>
-                </View>
+                <Heading headingText={'Reward Status'}/>
 
                 <FlatList
                     data={data}
                     renderItem={this.renderList}/>
+            </View>
             </View>
         );
     }
@@ -66,6 +65,7 @@ const styles=StyleSheet.create({
     container:{
         flex:1,
         alignItems:'center',
+        backgroundColor:'#ffffff',
     },
     rewardCardContainer:{
         backgroundColor:'#f4f5f7',

@@ -43,7 +43,7 @@ class Signin extends Component{
                 </View>
 
                 <TouchableOpacity 
-                onPress={()=>this.props.navigation.navigate('RewardScreen')}
+                onPress={()=>this.props.navigation.navigate('Dashboard')}
                 style={[Platform.OS == 'ios' ? styles.buttonRedIos : styles.buttonRedAndroid]}>
                     <Text style={{color:'#ffffff',fontSize:15}}>LOGIN</Text>
                 </TouchableOpacity>

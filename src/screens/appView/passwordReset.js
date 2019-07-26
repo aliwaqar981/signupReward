@@ -6,7 +6,7 @@ import {widthPercentageToDP as wp, heightPercentageToDP as hp} from '../../helpe
 export const Heading=(props)=>{
         return(
             <View style={{width:wp(90)}}>
-                <Text style={{color:'#253858',fontSize:20,fontWeight:'bold',marginLeft:wp(4),marginTop:hp(2)}}>Password Reset</Text>
+                <Text style={{color:'#253858',fontSize:20,fontWeight:'bold',marginLeft:wp(4),marginTop:hp(2)}}>{props.headingText}</Text>
                 <View style={{marginTop:hp(2),height:wp(0.2),width:wp(90),backgroundColor:'#ebecf0'}}/>
             </View>
         )
@@ -27,7 +27,7 @@ class PasswordReset extends Component{
                 <View style={{flex:1,backgroundColor:'#f4f5f7'}}>
                     <View style={{flex:1,backgroundColor:'#ffffff',margin:wp(5),justifyContent:'center',alignItems:'center'}}>
                         <View style={{position:'absolute',top:0}}>
-                            <Heading/>
+                            <Heading headingText={'Password Reset'}/>
                         </View>
                         
                         <View style={styles.smallInputField}>
@@ -58,7 +58,7 @@ class PasswordReset extends Component{
                 <View style={{flex:1,backgroundColor:'#f4f5f7'}}>
                     <View style={{flex:1,backgroundColor:'#ffffff',margin:wp(5),justifyContent:'center',alignItems:'center'}}>
                         <View style={{position:'absolute',top:0}}>
-                            <Heading/>
+                            <Heading headingText={'Password Reset'}/>
                         </View>
 
                         <View style={styles.smallInputField}>
