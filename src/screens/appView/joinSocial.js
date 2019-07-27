@@ -135,7 +135,7 @@ render() {
 
                 <TouchableOpacity 
                 // onPress={()=>this.props.navigation.navigate('DashboardScreen')}
-                    style={[Platform.OS == 'ios' ? styles.buttonRedIos : styles.buttonRedAndroid]} onPress={()=>this.setState({step:true})}>
+                    style={[Platform.OS == 'ios' ? styles.buttonRedIos : styles.buttonRedAndroid]} onPress={()=>this.setState({currentPosition:3})}>
                     <Text style={{color:'#ffffff',fontSize:15}}>Confirm</Text>
                 </TouchableOpacity>
             </View>

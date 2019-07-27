@@ -32,7 +32,7 @@ class PasswordReset extends Component{
                         
                         <View style={styles.smallInputField}>
                             <View style={{height:wp(12),width:wp(12),backgroundColor:'#ffffff',justifyContent:'center',alignItems:'center'}}>
-                                <Image source={require('../../assets/hash1.png')} style={{width:wp(7),height:wp(7)}} resizeMode='contain'/>
+                                <Image source={require('../../assets/userBlue.png')} style={{width:wp(5),height:wp(5)}} resizeMode='contain'/>
                             </View>
                             <TextInput
                                 placeholder='Input...' placeholderTextColor='#505f79'
@@ -63,7 +63,7 @@ class PasswordReset extends Component{
 
                         <View style={styles.smallInputField}>
                             <View style={{height:wp(12),width:wp(12),backgroundColor:'#ffffff',justifyContent:'center',alignItems:'center'}}>
-                                <Image source={require('../../assets/hash1.png')} style={{width:wp(7),height:wp(7)}} resizeMode='contain'/>
+                                <Image source={require('../../assets/lockBlue.png')} style={{width:wp(5),height:wp(5)}} resizeMode='contain'/>
                             </View>
                             <TextInput
                                 placeholder='Input...' placeholderTextColor='#505f79'
@@ -76,7 +76,7 @@ class PasswordReset extends Component{
 
                         <View style={[styles.smallInputField,{marginTop:hp(3)}]}>
                             <View style={{height:wp(12),width:wp(12),backgroundColor:'#ffffff',justifyContent:'center',alignItems:'center'}}>
-                                <Image source={require('../../assets/hash1.png')} style={{width:wp(7),height:wp(7)}} resizeMode='contain'/>
+                                <Image source={require('../../assets/lockBlue.png')} style={{width:wp(5),height:wp(5)}} resizeMode='contain'/>
                             </View>
                             <TextInput
                                 placeholder='Input...' placeholderTextColor='#505f79'

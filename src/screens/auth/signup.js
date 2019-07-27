@@ -1,18 +1,19 @@
 import React, {Component} from 'react'
-import {View, Text, TouchableOpacity, TextInput, StyleSheet, Image, Platform} from 'react-native'
+import {View, Text, TouchableOpacity, TextInput, StyleSheet, Image, Platform, ImageBackground} from 'react-native'
 import {widthPercentageToDP as wp, heightPercentageToDP as hp} from '../../helpers/Responsive'
 
 
 class Signup extends Component{
     render(){
         return(
+            <ImageBackground source={require('../../assets/appview.png')} style={{flex:1,}} resizeMode={'cover'}>
             <View style={styles.container}>
                 <View style={styles.logo}>
                     <Text style={{color:'black', fontSize:50}}>tag</Text>
                 </View>
 
                 <View style={[styles.smallInputField,{marginTop:hp(6)}]}>
-                    <Image source={require('../../assets/user.png')} style={{width:wp(4),height:wp(4),marginLeft:wp(2)}}/>
+                    <Image source={require('../../assets/user.png')} style={{width:wp(4),height:wp(4),marginLeft:wp(2)}} resizeMode={'contain'}/>
                     <TextInput
                         placeholder='Name' placeholderTextColor='#505f79'
                         autoCapitalize='none'
@@ -24,7 +25,7 @@ class Signup extends Component{
                 </View>
 
                 <View style={styles.smallInputField}>
-                    <Image source={require('../../assets/mail.png')} style={{width:wp(4),height:wp(4),marginLeft:wp(2)}}/>
+                    <Image source={require('../../assets/mail.png')} style={{width:wp(4),height:wp(4),marginLeft:wp(2)}} resizeMode={'contain'}/>
                     <TextInput
                         placeholder='Email' placeholderTextColor='#505f79'
                         autoCapitalize='none'
@@ -36,7 +37,7 @@ class Signup extends Component{
                 </View>
 
                 <View style={styles.smallInputField}>
-                    <Image source={require('../../assets/placeholder.png')} style={{width:wp(4),height:wp(4),marginLeft:wp(2)}}/>
+                    <Image source={require('../../assets/location1.png')} style={{width:wp(4),height:wp(4),marginLeft:wp(2)}} resizeMode={'contain'}/>
                     <TextInput
                         placeholder='Address' placeholderTextColor='#505f79'
                         autoCapitalize='none'
@@ -48,7 +49,7 @@ class Signup extends Component{
                 </View>
 
                 <View style={styles.smallInputField}>
-                    <Image source={require('../../assets/lock.png')} style={{width:wp(4),height:wp(4),marginLeft:wp(2)}}/>
+                    <Image source={require('../../assets/unlock.png')} style={{width:wp(4),height:wp(4),marginLeft:wp(2)}} resizeMode={'contain'}/>
                     <TextInput
                         placeholder='Password' placeholderTextColor='#505f79'
                         autoCapitalize='none'
@@ -65,10 +66,11 @@ class Signup extends Component{
                     <Text style={{color:'#ffffff',fontSize:15}}>REGISTER</Text>
                 </TouchableOpacity>
 
-                <TouchableOpacity style={{marginTop:hp(2)}} onPress={()=>this.props.navigation.navigate('DashboardScreen')}>
+                <TouchableOpacity style={{marginTop:hp(2)}} onPress={()=>this.props.navigation.navigate('SigninScreen')}>
                     <Text style={{fontSize:15,color:'#ffffff'}}>Login</Text>
                 </TouchableOpacity>
             </View>
+            </ImageBackground>
         );
     }
 }
@@ -76,7 +78,6 @@ class Signup extends Component{
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: '#5f3789',
         alignItems: 'center',
         alignContent: 'center',
         justifyContent:'center',

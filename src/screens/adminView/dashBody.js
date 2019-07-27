@@ -5,6 +5,7 @@ import {widthPercentageToDP as wp, heightPercentageToDP as hp} from '../../helpe
 class DashBody extends Component{
     render(){
         return(
+            <View style={{flex:1,backgroundColor:'#f4f5f7',padding:wp(5)}}>
             <View style={styles.container}>
                 <View style={[styles.rowContainer,{marginTop:hp(10)}]}>
                     <Text style={styles.inputName}>Address</Text>
@@ -59,6 +60,7 @@ class DashBody extends Component{
                 style={[Platform.OS == 'ios' ? styles.buttonRedIos : styles.buttonRedAndroid]}>
                     <Text style={{color:'#ffffff',fontSize:15}}>Confirm</Text>
                 </TouchableOpacity>
+            </View>
             </View>
         );
     }

@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import {View, Text, TouchableOpacity, TextInput, StyleSheet, Image, Platform, FlatList} from 'react-native'
+import {View, Text, TouchableOpacity, TextInput, StyleSheet, Image, Platform, FlatList,ImageBackground} from 'react-native'
 import {widthPercentageToDP as wp, heightPercentageToDP as hp} from '../../helpers/Responsive'
 import Drawer from 'react-native-drawer'
 import {withNavigation} from 'react-navigation'
@@ -11,7 +11,7 @@ import {withNavigation} from 'react-navigation'
 class MenuPanel extends Component{
     render(){
         return(
-            <View style={{flex:1,backgroundColor:'#5f3789',alignItems:'center'}}>
+            <ImageBackground source={require('../../assets/gradientBlue.png')} style={{flex:1,alignItems:'center'}}>
                 <View style={{marginTop:hp(5),borderRadius:2,width:wp(14),height:wp(14),backgroundColor:'#ffffff',justifyContent:'center',alignItems:'center'}}>
                     <Text style={{fontSize:20}}>tag</Text>
                 </View>
@@ -22,24 +22,25 @@ class MenuPanel extends Component{
                 <View style={styles.horizontalDash}/>
 
                 <TouchableOpacity onPress={()=>this.props.navigation.navigate('Screen3')} style={styles.DrawerOption}>
-                    <Image source={require('../../assets/dashboard.png')} style={{width:wp(7),height:wp(7)}} resizeMode='contain'/>
+                    <Image source={require('../../assets/social.png')} style={{width:wp(7),height:wp(7)}} resizeMode='contain'/>
                 </TouchableOpacity>
                 <View style={styles.horizontalDash}/>
 
                 <TouchableOpacity style={styles.DrawerOption} onPress={()=>this.props.navigation.navigate('Screen4')}>
-                    <Image source={require('../../assets/flame.png')} style={{width:wp(7),height:wp(7)}} resizeMode='contain'/>
+                    <Image source={require('../../assets/userWhite.png')} style={{width:wp(7),height:wp(7)}} resizeMode='contain'/>
                 </TouchableOpacity>
                 <View style={styles.horizontalDash}/>
 
-                <TouchableOpacity onPress={()=>this.props.navigation.navigate('Screen2')} style={{width:wp(10),height:wp(10),borderRadius:wp(5),marginTop:hp(7),backgroundColor:'#9aad12'}}>
+                <TouchableOpacity onPress={()=>this.props.navigation.navigate('Screen2')} style={{width:wp(10),height:wp(10),borderRadius:wp(5),marginTop:hp(7),backgroundColor:'#9aad12',justifyContent:'center',alignItems:'center'}}>
+                    <Image source={require('../../assets/arrowWhite.png')} style={{width:wp(5),height:wp(5)}} resizeMode='contain'/>
                 </TouchableOpacity>
 
             
-                <TouchableOpacity onPress={()=>{this._drawer.open()}} style={{height:wp(12),width:wp(20),alignItems:'center',backgroundColor:'#172b4d',justifyContent:'center',alignItems:'center',position:'absolute',bottom:0}}>
-                    <Image source={require('../../assets/reward.png')} style={{width:wp(5),height:wp(5)}} resizeMode='contain'/>
+                <TouchableOpacity style={{height:wp(12),width:wp(20),alignItems:'center',backgroundColor:'#3f0b58',justifyContent:'center',alignItems:'center',position:'absolute',bottom:0}}>
+                    <Image source={require('../../assets/logout.png')} style={{width:wp(5),height:wp(5)}} resizeMode='contain'/>
                 </TouchableOpacity>
                 
-            </View>
+            </ImageBackground>
         )
     }
 }

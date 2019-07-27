@@ -32,7 +32,7 @@ class Signin extends Component{
                 </View>
 
                 <View style={styles.smallInputField}>
-                    <Image source={require('../../assets/lock.png')} style={{width:wp(4),height:wp(4),marginLeft:wp(2)}}/>
+                    <Image source={require('../../assets/unlock.png')} style={{width:wp(4),height:wp(4),marginLeft:wp(2)}} resizeMode={'contain'}/>
                     <TextInput
                         placeholder='Password' placeholderTextColor='#505f79'
                         autoCapitalize='none'
