@@ -21,7 +21,6 @@ import { createStackNavigator,createAppContainer,createSwitchNavigator } from 'r
 import Signup from './src/screens/auth/signup'
 import Signin from './src/screens/auth/signin'
 import RewardStatus from './src/screens/appView/rewardStatus'
-import Dashboard from './src/screens/dashboard'
 import MainMenu from './src/screens/appView/mainmenu'
 
 import AppNavigation from './navigation/AppNavigation'

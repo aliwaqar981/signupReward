@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import {View, Text, TouchableOpacity, TextInput, StyleSheet, Image, Platform} from 'react-native'
+import {View, Text, TouchableOpacity, TextInput, StyleSheet, Image, Platform,ImageBackground} from 'react-native'
 import {widthPercentageToDP as wp, heightPercentageToDP as hp} from '../../helpers/Responsive'
 
 class Signin extends Component{
@@ -13,6 +13,7 @@ class Signin extends Component{
 
     render(){
         return(
+        <ImageBackground source={require('../../assets/appview.png')} style={{flex:1,}} resizeMode={'cover'}>
             <View style={styles.container}>
                 <View style={styles.logo}>
                     <Text style={{color:'black', fontSize:50}}>tag</Text>
@@ -52,6 +53,7 @@ class Signin extends Component{
                     <Text style={{fontSize:15,color:'#ffffff'}}>Register</Text>
                 </TouchableOpacity>
             </View>
+        </ImageBackground>
         );
     }
 }
@@ -59,7 +61,6 @@ class Signin extends Component{
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: '#5f3789',
         alignItems: 'center',
         alignContent: 'center',
         justifyContent:'center',

@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 import {View, Text, TouchableOpacity, TextInput, StyleSheet, Image, Platform, FlatList} from 'react-native'
-import {widthPercentageToDP as wp, heightPercentageToDP as hp} from '../helpers/Responsive'
+import {widthPercentageToDP as wp, heightPercentageToDP as hp} from '../../helpers/Responsive'
 
 class DashBody extends Component{
     render(){
@@ -10,7 +10,7 @@ class DashBody extends Component{
                     <Text style={styles.inputName}>Address</Text>
                     <View style={styles.smallInputField}>
                         <View style={{height:wp(12),width:wp(12),backgroundColor:'#ffffff',justifyContent:'center',alignItems:'center'}}>
-                            <Image source={require('../assets/hash1.png')} style={{width:wp(7),height:wp(7)}} resizeMode='contain'/>
+                            <Image source={require('../../assets/hash1.png')} style={{width:wp(7),height:wp(7)}} resizeMode='contain'/>
                         </View>
                         <TextInput
                             placeholder='Input...' placeholderTextColor='#505f79'
@@ -26,7 +26,7 @@ class DashBody extends Component{
                     <Text style={styles.inputName}>Reward</Text>
                     <View style={styles.smallInputField}>
                         <View style={{height:wp(12),width:wp(12),backgroundColor:'#ffffff',justifyContent:'center',alignItems:'center'}} resizeMode='contain'>
-                            <Image source={require('../assets/hash.png')} style={{width:wp(7),height:wp(7)}}/>
+                            <Image source={require('../../assets/hash.png')} style={{width:wp(7),height:wp(7)}}/>
                         </View>
                         <TextInput
                             placeholder='Input...' placeholderTextColor='#505f79'
@@ -42,7 +42,7 @@ class DashBody extends Component{
                     <Text style={styles.inputName}>Pool</Text>
                     <View style={styles.smallInputField}>
                         <View style={{height:wp(12),width:wp(12),backgroundColor:'#ffffff',justifyContent:'center',alignItems:'center'}}>
-                            <Image source={require('../assets/hash.png')} style={{width:wp(7),height:wp(7)}} resizeMode='contain'/>
+                            <Image source={require('../../assets/hash.png')} style={{width:wp(7),height:wp(7)}} resizeMode='contain'/>
                         </View>
                         <TextInput
                             placeholder='Input...' placeholderTextColor='#505f79'

@@ -12,7 +12,7 @@ import { createStackNavigator,createAppContainer,createSwitchNavigator,DrawerNav
 import Signup from '../src/screens/auth/signup'
 import Signin from '../src/screens/auth/signin'
 import RewardStatus from '../src/screens/appView/rewardStatus'
-import Dashboard from '../src/screens/dashboard'
+import Dashboard from '../src/screens/adminView/dashboard'
 import MainMenu from '../src/screens/appView/mainmenu'
 import PasswordReset from '../src/screens/appView/passwordReset'
 import Social from '../src/screens/appView/joinSocial'
