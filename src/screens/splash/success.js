@@ -15,13 +15,13 @@ export default class SuccessAnimation extends React.Component {
       componentDidMount() {
         Animated.timing(this.state.progress, {
           toValue: 1,
-          duration: 3000,
+          duration: 2000,
           easing: Easing.linear,
         }).start();
         setTimeout(
           ()=>{
             this.props.navigation.navigate('DashboardScreen')
-          },3000
+          },2200
         )
       }
     
