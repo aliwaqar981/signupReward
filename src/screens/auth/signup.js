@@ -66,7 +66,7 @@ class Signup extends Component{
                     <Text style={{color:'#ffffff',fontSize:15}}>REGISTER</Text>
                 </TouchableOpacity>
 
-                <TouchableOpacity style={{marginTop:hp(2)}} onPress={()=>this.props.navigation.navigate('SuccessAnimation')}>
+                <TouchableOpacity style={{marginTop:hp(2)}} onPress={()=>this.props.navigation.navigate('SigninScreen')}>
                     <Text style={{fontSize:15,color:'#ffffff'}}>Login</Text>
                 </TouchableOpacity>
             </View>

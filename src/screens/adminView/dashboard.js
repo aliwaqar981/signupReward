@@ -43,12 +43,34 @@ class Dashboard extends Component{
     }
 }
 
+export class FoodTabHeader extends Component{
+  toggleDrawer = () => {
+    this.props.navigationProps.openDrawer();
+  };
+  render(){
+    return(
+      <ImageBackground source={require('../../assets/headerBig.png')} style={{width:wp(100),height:wp(40),justifyContent:'center'}} resizeMode={'cover'}>
+        <View style={{ flexDirection: 'row',alignItems:'center',justifyContent:'center',marginTop:hp(3) }}>
+
+            <TouchableOpacity onPress={this.toggleDrawer.bind(this)} style={{position:'absolute',left:0}}>
+              <Image source={require('../../assets/menu.png')} style={{width:wp(6),height:wp(6),marginLeft:wp(8)}} resizeMode='contain'/>
+            </TouchableOpacity>
+            <Text style={{color:'#ffffff',fontSize:22,fontWeight:'bold',marginLeft:wp(5),alignSelf:'center'}}>{this.props.headerText}</Text>
+            <TouchableOpacity style={{width:wp(6),height:wp(6),borderRadius:wp(3),backgroundColor:'#9aad12',justifyContent:'center',alignItems:'center',position:'absolute',right:0,marginRight:wp(5)}}>
+                <Image source={require('../../assets/edit.png')} style={{width:wp(2),height:wp(2)}} resizeMode='contain'/>
+            </TouchableOpacity>
+        </View>
+          
+      </ImageBackground>
+    )
+  }
+}
 
 const Screen3_StackNavigator = createStackNavigator({
   FoodReward: {
     screen: FoodReward,
     navigationOptions: ({ navigation }) => ({
-      headerLeft: <Dashboard navigationProps={navigation} headerText={'Food'} />,
+      headerLeft: <FoodTabHeader navigationProps={navigation} headerText={'Food'} />,
       headerStyle: {
         backgroundColor: '#ffffff',
       },

@@ -3,13 +3,15 @@ import {View, Text, TouchableOpacity, TextInput, StyleSheet, Image, Platform, Im
 import {widthPercentageToDP as wp, heightPercentageToDP as hp} from '../../helpers/Responsive'
 import Drawer from 'react-native-drawer'
 import {withNavigation} from 'react-navigation'
+import { connect } from 'react-redux';
+
 
 class ControlPanel extends Component{
     render(){
         return(
             <ImageBackground source={require('../../assets/adminH.png')} style={{flex:1}}>
                 <View style={{width:wp(40),height:wp(14),alignItems:'center',justifyContent:'space-between',flexDirection:'row'}}>
-                    <Text style={styles.DrawerOptionText}>ADMIN</Text>
+                    <Text style={styles.DrawerOptionText}>{this.props.Name}</Text>
                     <TouchableOpacity onPress={()=>this.props.navigation.closeDrawer()}>
                         <Image source={require('../../assets/menu.png')} style={{width:wp(5),height:wp(5),marginRight:wp(5)}} resizeMode='contain'/>
                     </TouchableOpacity>
@@ -58,4 +60,18 @@ const styles=StyleSheet.create({
     }
 })
 
-export default ControlPanel
+const mapStateToProps = state => {
+    return {
+      Name: state.auth.userName
+    }
+  }
+  
+  const mapDispatchToProps = dispatch => {
+    return {
+    }
+  }
+  
+  
+export default connect(mapStateToProps, mapDispatchToProps)(ControlPanel)
+
+//export default ControlPanel
