@@ -16,6 +16,7 @@ import Dashboard from '../src/screens/adminView/dashboard'
 import MainMenu from '../src/screens/appView/mainmenu'
 import PasswordReset from '../src/screens/appView/passwordReset'
 import Social from '../src/screens/appView/joinSocial'
+import SuccessAnimation from '../src/screens/splash/success'
 
 
 const AuthStack = createSwitchNavigator({
@@ -52,6 +53,12 @@ const AuthStack = createSwitchNavigator({
         screen: PasswordReset,
         navigationOptions:{
             title:'Password'
+        }
+    },
+    SuccessAnimation:{
+        screen:SuccessAnimation,
+        navigationOptions:{
+            header:null
         }
     }
     
