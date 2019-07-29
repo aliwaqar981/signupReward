@@ -1,6 +1,9 @@
 import React, {Component} from 'react'
 import {View, Text, TouchableOpacity, TextInput, StyleSheet, Image, Platform,ImageBackground} from 'react-native'
 import {widthPercentageToDP as wp, heightPercentageToDP as hp} from '../../helpers/Responsive'
+import { connect } from 'react-redux';
+import {saveUser} from '../../store/actions/authAction'
+
 
 class Signin extends Component{
     constructor(props) {
@@ -9,6 +12,11 @@ class Signin extends Component{
             email: '',
             password: '',
         }
+    }
+
+    SubmitHandler = () => {
+        this.props.add(this.state.email);
+        this.props.navigation.navigate('SuccessAnimation')
     }
 
     render(){
@@ -44,7 +52,7 @@ class Signin extends Component{
                 </View>
 
                 <TouchableOpacity 
-                onPress={()=>this.props.navigation.navigate('Dashboard')}
+                onPress={this.SubmitHandler}
                 style={[Platform.OS == 'ios' ? styles.buttonRedIos : styles.buttonRedAndroid]}>
                     <Text style={{color:'#ffffff',fontSize:15}}>LOGIN</Text>
                 </TouchableOpacity>
@@ -139,4 +147,21 @@ const styles = StyleSheet.create({
     },
 });
 
-export default Signin;
+const mapStateToProps = state => {
+    return {
+      //places: state.places.places
+    }
+  }
+  
+  const mapDispatchToProps = dispatch => {
+    return {
+      add: (name) => {
+        dispatch(saveUser(name))
+      }
+    }
+  }
+  
+  
+export default connect(mapStateToProps, mapDispatchToProps)(Signin)
+
+//export default Signin;
